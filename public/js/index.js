@@ -20,11 +20,12 @@ function createSearchableMap(locations = allLocations) {
 
   locations.forEach(function (location) {
     markers.push([location.name, location.lat, location.lng]);
-
+    var search_string = String(location.name).split(' ').join('+');
+    var url = "<a href=\"https://www.google.com/search?q="+search_string+"+ghosts\">"+location.name+"</a>";
     infoWindowContent.push(['<div class="infoWindow"><h3>' + location.name +
       '</h3><p>' + location.address + '<br />' + location.city +
       ', ' + location.state + ' ' + location.zip + '</p><p>Phone ' +
-      location.phone + '</p><p>ID:'+location.id+'</p></div>']);
+      location.phone + '</p><p>Lore:'+location.lore+'</p><p>'+url+'</p></div>']);
   });
 
   var infoWindow = new google.maps.InfoWindow(), marker, i;
@@ -46,26 +47,6 @@ function createSearchableMap(locations = allLocations) {
         var place_id='';
         infoWindow.setContent(infoWindowContent[i][0]);
         infoWindow.open(map, marker);
-        
-        //Retrieve Google place id from the locations content
-        var location_id_str = infoWindowContent[i][0];
-        var split_array=location_id_str.split("<p>");
-        for(let x=0;x<split_array.length;x++){
-          if(split_array[x].includes("ID")){
-            var tag=split_array[x];
-            var firstIndex =tag.indexOf(':');
-            var lastIndex =tag.indexOf('<');
-            place_id = tag.substr((firstIndex+1),(lastIndex-3))
-          }
-        }
-        //Display google reviews for this marker
-        $("#google-reviews").googlePlaces({
-          placeId: place_id//'ChIJp2QxV_sJVFMR1DEp1x_16F8' //Find placeID @: https://developers.google.com/places/place-id
-          , render: ['reviews']
-          , min_rating: 4
-          , max_rows: 4
-        });
-
       }
     })(marker, i));
 
@@ -115,11 +96,11 @@ function filterLocations() {
       if (filteredLocations.length > 0) {
         createSearchableMap(filteredLocations);
         createListOfLocations(filteredLocations);
-        searchResultsAlert.innerHTML = 'Chipotle Locations within ' + maxRadius + ' miles of ' + userAddress + ':';
+        searchResultsAlert.innerHTML = 'Locations within ' + maxRadius + ' miles of ' + userAddress + ':';
       } else {
         console.log("nothing found!");
         document.getElementById('locations-near-you').innerHTML = '';
-        searchResultsAlert.innerHTML = 'Sorry, no Chipotle locations were found within ' + maxRadius + ' miles of ' + userAddress + '.';
+        searchResultsAlert.innerHTML = 'Sorry, no locations were found within ' + maxRadius + ' miles of ' + userAddress + '.';
       }
 
       function isWithinRadius(location) {
@@ -145,7 +126,7 @@ function createListOfLocations(locations) {
   locations.forEach(function (location) {
     var specificLocation = document.createElement('div');
     var locationInfo = "<h4>" + location.name + "</h4><p>" + location.address + "</p>" +
-      "<p>" + location.city + ", " + location.state + " " + location.zip + "</p><p>" + location.phone + "</p>";
+      "<p>" + location.city + ", " + location.state + " " + location.zip + "</p><p>" + location.phone + "</p><p>"+location.lore+"</p><p>"+url+"</p></div>";
     specificLocation.setAttribute("class", 'location-near-you-box');
     specificLocation.innerHTML = locationInfo;
     locationsList.appendChild(specificLocation);
