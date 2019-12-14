@@ -6,6 +6,7 @@ body, .parallax {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: myFont;
+  font-size: 20px;
 }
 
 #mainpage{
@@ -14,7 +15,7 @@ body, .parallax {
 }
 #map{
   height: 300px;
-  width: 100%;
+  width: 200px;
   margin: 20px;
   padding: 0px;
 }
@@ -177,5 +178,19 @@ line-height:1;
 
   @font-face {
     font-family: myFont;
-  src: url("../fonts/jmh_hallowen_2017/JMH\ Hallowen\ 2017.otf")
+  src: url("../fonts/another_danger/Another\ Danger\ Slanted\ -\ Demo.otf")
   }
+
+  .navbar-brand {
+      font-family: myFont;
+      color: red;
+      font-size: 29.5px;
+  }
+
+  .navbar-dark .navbar-brand {
+    color:red;
+}
+
+#location-search-alert {
+     color: white;
+}
