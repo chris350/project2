@@ -1,10 +1,12 @@
 body, .parallax {
-  background-image: url("../images/shutterstock_559677994.0.jpg");
+  background-image: url("../images/ed79d124-ea32-4a9b-99e3-96b716e87b52-fotolia_129797717_subscription_monthly_m.jpg");
   background-size: 255vmin;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: myFont;
+  font-size: 20px;
 }
 
 #mainpage{
@@ -13,7 +15,7 @@ body, .parallax {
 }
 #map{
   height: 300px;
-  width: 100%;
+  width: 200px;
   margin: 20px;
   padding: 0px;
 }
@@ -173,3 +175,22 @@ line-height:1;
 }
 .review-stars ul li i.inactive { color: #c6c6c6;}
 .star:after { content: "\2605"; }
+
+  @font-face {
+    font-family: myFont;
+  src: url("../fonts/friday13/Friday13v12.ttf")
+  }
+
+  .navbar-brand {
+      font-family: myFont;
+      color: red;
+      font-size: 29.5px;
+  }
+
+  .navbar-dark .navbar-brand {
+    color:red;
+}
+
+#location-search-alert {
+  color: white;
+}
