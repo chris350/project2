@@ -1,5 +1,5 @@
 body, .parallax {
-  background-image: url("../images/shutterstock_559677994.0.jpg");
+  background-image: url("../images/ed79d124-ea32-4a9b-99e3-96b716e87b52-fotolia_129797717_subscription_monthly_m.jpg");
   background-size: 255vmin;
   background-attachment: fixed;
   background-position: center;
@@ -178,7 +178,7 @@ line-height:1;
 
   @font-face {
     font-family: myFont;
-  src: url("../fonts/another_danger/Another\ Danger\ Slanted\ -\ Demo.otf")
+  src: url("../fonts/friday13/Friday13v12.ttf")
   }
 
   .navbar-brand {
@@ -192,5 +192,5 @@ line-height:1;
 }
 
 #location-search-alert {
-     color: white;
+  color: white;
 }
