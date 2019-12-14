@@ -6,7 +6,7 @@ This app displays a Google Map with markers poiting to haunted locations in Goer
 button. Map will display all the locations within selected miles range.
 You can also create bookmark for a location. Click on the 'Bookmark' option in Navbar. Bookmark page will display 'Add New Place' button.Add location details. Once bookmark is added a new card will be displayed on 'Home' page.On the card there is 'View Details' button. Click this button to read, edit or delete the bookmark
 ### Live Demo
-This app is deployed on [Heroku](https://heroku.com) for live demo check [https://haunted-house-locator-gt.herokuapp.com/]()
+This app is deployed on [Heroku](https://heroku.com) for live demo check [https://haunted-house-locator-gt.herokuapp.com/](https://haunted-house-locator-gt.herokuapp.com/)
 ### Technologies Used
 * [Node JS](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
